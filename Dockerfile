@@ -7,4 +7,4 @@ ADD ./etc/bind /etc/bind
 
 EXPOSE 53
 
-CMD ["/usr/sbin/named -u bind -g"]
+CMD ["/usr/sbin/named","-u bind","-g"]
