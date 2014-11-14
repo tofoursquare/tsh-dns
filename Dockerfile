@@ -4,7 +4,8 @@ RUN apt-get update
 RUN apt-get install -y bind9
 
 ADD ./etc/bind /etc/bind
+ADD start-tsh-dns /start-tsh-dns
 
 EXPOSE 53
 
-CMD ["/usr/sbin/named","-u bind","-g"]
+CMD ["/start-tsh-dns"]
