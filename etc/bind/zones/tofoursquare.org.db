@@ -1,0 +1,38 @@
+$TTL 3600
+tofoursquare.org. IN SOA ns1.tofoursquare.org. hostmaster.tofoursquare.org. (
+2013011700
+28800
+3600
+604800
+38400
+)
+
+tofoursquare.org. IN NS ns1.tofoursquare.org.
+tofoursquare.org. IN MX 10 mail.tofoursquare.org.
+lists.tofoursquare.org. IN MX 10 mail.tofoursquare.org.
+; tofoursquare.org. IN A 72.32.251.192
+; tofoursquare.org. IN A 24.43.93.66
+tofoursquare.org. IN A 71.160.233.73
+
+; External Addresses
+; www IN A 72.32.251.192
+www IN A 71.160.233.73
+new IN A 71.160.233.73
+test IN A 71.160.233.73
+ns1 IN A 71.160.233.73
+ns2 IN A 71.160.233.73
+mail IN A 71.160.233.73
+lists IN A 71.160.233.73
+pbx-public IN A 71.160.233.73
+
+; Internal Addresses
+malibu IN A 192.168.1.103
+zuma IN A 192.168.1.106
+zephyr IN A 192.168.1.107
+tsh-core-services IN A 192.168.1.201
+tsh-web-services IN A 192.168.1.202
+pbx-private IN A 192.168.1.203
+tsh-file-services IN A 192.168.1.204
+tsh-vcenter IN A 192.168.1.205
+tsh-web-services-2 IN A 192.168.1.206
+
