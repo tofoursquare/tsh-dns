@@ -1,0 +1,41 @@
+#!/bin/bash
+
+if [[ -z "$1" ]]; then
+  echo "syntax:  tsh-dns [start stop restart update]"
+  exit 1
+fi
+
+if [[ "$1" == "start" || "$1" == "restart" ]]; then
+  echo "Checking to see if TSH DNS Services are already running . . . "
+  id=$(docker ps | grep tsh-dns | awk '{print $1}')
+  if [[ ${#id} != 0 ]]; then
+    echo "found.  stopping."
+    docker stop $id
+  else
+    echo "false."
+  fi
+  echo "Starting TSH DNS Services . . ."
+  docker run -d -p 53:53 -p 53:53/udp tofoursquare/tsh-dns /start-tsh-dns
+elif [[ "$1" == "update" ]]; then
+  echo "Checking for an existing instance of TSH DNS Services . . . "
+  id=$(docker ps | grep tsh-dns | awk '{print $1}')
+  if [[ ${#id} != 0 ]]; then
+    echo "found.  stopping. "
+    docker stop $id
+  fi
+  echo "Updating TSH DNS Services . . . "
+  echo "Pulling tofoursquare/tsh-dns:latest . . . "
+  docker pull tofoursquare/tsh-dns:latest
+  echo "Starting the newest version of TSH DNS Services . . . " 
+  docker run -d -p 53:53 -p 53:53/udp tofoursquare/tsh-dns /start-tsh-dns
+elif [[ "$1" == "stop" ]]; then
+  echo "Stopping TSH DNS Services . . ."
+  id=$(docker ps | grep tsh-dns | awk '{print $1}')
+  if [[ ${#id} != 0 ]]; then
+    docker stop $id
+  else
+    echo "tsh-dns is not currently running. "
+  fi
+else
+  echo "error:  the only valid options are start, stop, restart and update."
+fi
