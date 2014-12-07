@@ -1,0 +1,14 @@
+[Unit]
+Description=tsh-dns
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=/opt/bin/tsh-dns stop
+ExecStart=/usr/bin/docker run -p 53:53 -p 53:53/udp tofoursquare/tsh-dns /start-tsh-dns
+ExecStop=/opt/bin/tsh-dns stop
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
