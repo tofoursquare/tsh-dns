@@ -14,9 +14,9 @@ lists.tofoursquare.org. IN MX 10 mail.tofoursquare.org.
 tofoursquare.org. IN A 71.160.233.73
 
 ; External Addresses
-; www IN CNAME www235.wixdns.net
+; www IN CNAME www235.wixdns.net.
 www IN A 71.160.233.73
-m IN CNAME www235.wixdns.net
+m IN CNAME www235.wixdns.net.
 new IN A 71.160.233.73
 test IN A 71.160.233.73
 ns1 IN A 71.160.233.73
