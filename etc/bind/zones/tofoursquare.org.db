@@ -11,19 +11,19 @@ tofoursquare.org. IN NS ns1.tofoursquare.org.
 tofoursquare.org. IN MX 10 mail.tofoursquare.org.
 lists.tofoursquare.org. IN MX 10 mail.tofoursquare.org.
 tofoursquare.org. IN A 23.236.62.147
-; tofoursquare.org. IN A 71.160.233.73
+; tofoursquare.org. IN A 47.180.153.122
 
 ; External Addresses
 www IN CNAME www235.wixdns.net.
-; www IN A 71.160.233.73
+; www IN A 47.180.153.122
 m IN CNAME www235.wixdns.net.
-new IN A 71.160.233.73
-test IN A 71.160.233.73
-ns1 IN A 71.160.233.73
-ns2 IN A 71.160.233.73
-mail IN A 71.160.233.73
-lists IN A 71.160.233.73
-pbx-public IN A 71.160.233.73
+new IN A 47.180.153.122
+test IN A 47.180.153.122
+ns1 IN A 47.180.153.122
+ns2 IN A 47.180.153.122
+mail IN A 47.180.153.122
+lists IN A 47.180.153.122
+pbx-public IN A 47.180.153.122
 
 ; Internal Addresses
 malibu IN A 192.168.1.103
